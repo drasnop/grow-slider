@@ -53,6 +53,10 @@ input.loan-amount.ng-invalid {
   color: red;
 }
 
+.grow-slider {
+  width: 47%;
+}
+
 
 /* Responsive: Portrait tablets and up */
 

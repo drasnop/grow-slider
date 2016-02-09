@@ -19,4 +19,13 @@ angular.module('growSliderApp')
         ceil: 30
       }
     };
+
+    $scope.growRateSlider = {
+      value: 10,
+      options: {
+        floor: 5.9,
+        ceil: 17.25
+      }
+    };
+
   });
