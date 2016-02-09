@@ -8,10 +8,17 @@
  * Controller of the growSliderApp
  */
 angular.module('growSliderApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function($scope) {
+
+    $scope.loanAmount = 10000;
+
+    $scope.externalRateSlider = {
+      value: 19.9,
+      options: {
+        floor: 5.9,
+        ceil: 30
+      }
+    };
+
+
   });
