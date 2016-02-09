@@ -28,7 +28,7 @@
       <span>Loan cost:</span>
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
-      <span class="external-cost">{{loanAmount*externalRateSlider.value/100 | currency : '$' : 0}}</span>
+      <span class="external-cost">{{externalCost() | currency : '$' : 0}}</span>
     </div>
   </div>
 
@@ -38,13 +38,13 @@
         <br> Explore how much you could save! </p>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <rzslider rz-slider-model="growRateSlider.value" rz-slider-options="growRateSlider.options"></rzslider>
+      <rzslider class="grow-slider" rz-slider-model="growRateSlider.value" rz-slider-options="growRateSlider.options"></rzslider>
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right visible-sm-block visible-lg-block">
       <span>Grow cost:</span>
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
-      <span class="grow-cost">{{loanAmount*growRateSlider.value/100 | currency : '$' : 0}}</span>
+      <span class="grow-cost">{{growCost() | currency : '$' : 0}}</span>
     </div>
   </div>
 
@@ -54,7 +54,7 @@
       You save:
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
-      <span class="saved">{{loanAmount*(externalRateSlider.value-growRateSlider.value)/100 | positive | currency : '$' : 0}}</span>
+      <span class="saved">{{savings() | positive | currency : '$' : 0}}</span>
     </div>
   </div>
 

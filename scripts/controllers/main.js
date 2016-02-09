@@ -28,4 +28,18 @@ angular.module('growSliderApp')
       }
     };
 
+    $scope.externalCost = function() {
+      return $scope.loanAmount * $scope.externalRateSlider.value / 100;
+    };
+
+
+    $scope.growCost = function() {
+      return $scope.loanAmount * $scope.growRateSlider.value / 100;
+    };
+
+    $scope.savings = function() {
+      // negative output will be filtered out
+      return $scope.externalCost() - $scope.growCost();
+    };
+
   });

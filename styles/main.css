@@ -7,6 +7,7 @@
 
 body {
   padding: 0;
+  font-size: 16px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -89,6 +90,10 @@ input.loan-amount.ng-invalid {
   color: green;
 }
 
+span.loan-amount {
+  font-size: 2em;
+}
+
 
 /* Responsive: Portrait tablets and up */
 
@@ -105,6 +110,7 @@ input.loan-amount.ng-invalid {
   }
   .text-sm-right {
     text-align: right;
+    white-space: nowrap;
   }
   .vertical-align {
     display: flex;
