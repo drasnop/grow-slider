@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'rzModule'
+    'rzModule',
+    'ng-currency'
   ])
   .config(function($routeProvider) {
     $routeProvider
