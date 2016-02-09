@@ -1,4 +1,5 @@
 <h1>Find out how much money you can save with Grow!</h1>
+
 <div class="row">
   <div class="col-xs-12 col-sm-6">
     <p>Enter loan amount</p>
@@ -18,7 +19,7 @@
     <rzslider rz-slider-model="externalRateSlider.value" rz-slider-options="externalRateSlider.options"></rzslider>
   </div>
   <div class="col-xs-12 col-sm-6">
-    <p>{{loanAmount*externalRateSlider.value/100 | currency : '$' : 0}}</p>
+    <span class="external-cost">{{loanAmount*externalRateSlider.value/100 | currency : '$' : 0}}</span>
   </div>
 </div>
 
@@ -32,6 +33,16 @@
     <rzslider class="grow-slider" rz-slider-model="growRateSlider.value" rz-slider-options="growRateSlider.options"></rzslider>
   </div>
   <div class="col-xs-12 col-sm-6">
-    <p>{{loanAmount*growRateSlider.value/100 | currency : '$' : 0}}</p>
+    <span class="grow-cost">{{loanAmount*growRateSlider.value/100 | currency : '$' : 0}}</span>
+  </div>
+
+
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 text-right">
+    You could save:
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <span class="saved">{{loanAmount*(externalRateSlider.value-growRateSlider.value)/100 | positive | currency : '$' : 0}}</span>
   </div>
 </div>

@@ -57,6 +57,14 @@ input.loan-amount.ng-invalid {
   width: 47%;
 }
 
+.external-cost {
+  color: red;
+}
+
+.saved {
+  color: green;
+}
+
 
 /* Responsive: Portrait tablets and up */
 
