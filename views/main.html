@@ -28,7 +28,7 @@
       <span>Loan cost:</span>
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
-      <span class="external-cost">{{externalCost() | currency : '$' : 0}}</span>
+      <span class="external-cost" ng-style="{'font-size': 1 + externalRateSlider.ratio() + 'em'}">{{externalCost() | currency : '$' : 0}}</span>
     </div>
   </div>
 
@@ -54,9 +54,11 @@
       You save:
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
-      <span class="saved">{{savings() | positive | currency : '$' : 0}}</span>
+      <span class="saved" ng-style="{'font-size': 2 + (externalRateSlider.ratio()-growRateSlider.ratio()) + 'em'}">{{savings() | positive | currency : '$' : 0}}</span>
     </div>
   </div>
+
+  <!-- visible only on xs screens -->
 
   <div class="summary visible-xs-block">
     <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
@@ -69,7 +71,7 @@
       <span>Loan cost:</span>
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1">
-      <span class="external-cost">{{loanAmount*externalRateSlider.value/100 | currency : '$' : 0}}</span>
+      <span class="external-cost" ng-style="{'font-size': 1 + externalRateSlider.ratio() + 'em'}">{{loanAmount*externalRateSlider.value/100 | currency : '$' : 0}}</span>
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
       <span>Grow cost:</span>
@@ -81,7 +83,7 @@
       You save:
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1">
-      <span class="saved">{{loanAmount*(externalRateSlider.value-growRateSlider.value)/100 | positive | currency : '$' : 0}}</span>
+      <span class="saved" ng-style="{'font-size': 2 + (externalRateSlider.ratio()-growRateSlider.ratio()) + 'em'}">{{loanAmount*(externalRateSlider.value-growRateSlider.value)/100 | positive | currency : '$' : 0}}</span>
     </div>
 
   </div>

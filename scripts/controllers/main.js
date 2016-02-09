@@ -17,6 +17,9 @@ angular.module('growSliderApp')
       options: {
         floor: 5.9,
         ceil: 30
+      },
+      ratio: function() {
+        return (this.value - this.options.floor) / (this.options.ceil - this.options.floor);
       }
     };
 
@@ -25,6 +28,10 @@ angular.module('growSliderApp')
       options: {
         floor: 5.9,
         ceil: 17.25
+      },
+      /* laziness. I should use object */
+      ratio: function() {
+        return (this.value - this.options.floor) / (this.options.ceil - this.options.floor);
       }
     };
 
@@ -40,6 +47,10 @@ angular.module('growSliderApp')
     $scope.savings = function() {
       // negative output will be filtered out
       return $scope.externalCost() - $scope.growCost();
+    };
+
+    $scope.externalRatio = function() {
+      return ($scope.externalRateSlider.options.ceil - $scope.externalRateSlider.value) / ($scope.externalRateSlider.options.ceil - $scope.externalRateSlider.options.floor);
     };
 
   });

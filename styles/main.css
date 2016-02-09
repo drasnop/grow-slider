@@ -87,7 +87,7 @@ input.loan-amount.ng-invalid {
 }
 
 .saved {
-  color: green;
+  color: #00C800;
 }
 
 span.loan-amount {
