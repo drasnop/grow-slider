@@ -19,6 +19,4 @@ angular.module('growSliderApp')
         ceil: 30
       }
     };
-
-
   });
