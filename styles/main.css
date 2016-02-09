@@ -64,6 +64,14 @@ img.logo {
 
 /* form */
 
+.header-margin {
+  margin-bottom: 70px;
+}
+
+.extra-margin {
+  margin-bottom: 30px;
+}
+
 input.loan-amount.ng-invalid {
   border: 1px solid red;
   color: red;
@@ -94,5 +102,12 @@ input.loan-amount.ng-invalid {
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
+  }
+  .text-sm-right {
+    text-align: right;
+  }
+  .vertical-align {
+    display: flex;
+    align-items: center;
   }
 }
