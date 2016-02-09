@@ -9,10 +9,10 @@
     <div class="col-xs-12 col-sm-4">
       <input class="loan-amount" ng-model="loanAmount" ng-currency fraction="0" min="10000" max="35000">
     </div>
-    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
-      <span class="loan-amount">Amount:</span>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right visible-sm-block visible-lg-block">
+      <span>Amount:</span>
     </div>
-    <div class="col-xs-6 col-sm-1 col-sm-push-1">
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
       <span class="loan-amount">{{loanAmount | currency : '$' : 0}}</span>
     </div>
   </div>
@@ -24,10 +24,10 @@
     <div class="col-xs-12 col-sm-4">
       <rzslider rz-slider-model="externalRateSlider.value" rz-slider-options="externalRateSlider.options"></rzslider>
     </div>
-    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
-      <span class="loan-amount">Loan cost:</span>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right visible-sm-block visible-lg-block">
+      <span>Loan cost:</span>
     </div>
-    <div class="col-xs-6 col-sm-1 col-sm-push-1">
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
       <span class="external-cost">{{loanAmount*externalRateSlider.value/100 | currency : '$' : 0}}</span>
     </div>
   </div>
@@ -40,22 +40,48 @@
     <div class="col-xs-12 col-sm-4">
       <rzslider rz-slider-model="growRateSlider.value" rz-slider-options="growRateSlider.options"></rzslider>
     </div>
-    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
-      <span class="loan-amount">Grow cost:</span>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right visible-sm-block visible-lg-block">
+      <span>Grow cost:</span>
     </div>
-    <div class="col-xs-6 col-sm-1 col-sm-push-1">
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
       <span class="grow-cost">{{loanAmount*growRateSlider.value/100 | currency : '$' : 0}}</span>
     </div>
   </div>
 
   <div class="row vertical-align extra-margin">
     <div class="col-xs-12 col-sm-8"></div>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right visible-sm-block visible-lg-block">
+      You save:
+    </div>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 visible-sm-block visible-lg-block">
+      <span class="saved">{{loanAmount*(externalRateSlider.value-growRateSlider.value)/100 | positive | currency : '$' : 0}}</span>
+    </div>
+  </div>
+
+  <div class="summary visible-xs-block">
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
+      <span>Amount:</span>
+    </div>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1">
+      <span class="loan-amount">{{loanAmount | currency : '$' : 0}}</span>
+    </div>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
+      <span>Loan cost:</span>
+    </div>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1">
+      <span class="external-cost">{{loanAmount*externalRateSlider.value/100 | currency : '$' : 0}}</span>
+    </div>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
+      <span>Grow cost:</span>
+    </div>
+    <div class="col-xs-6 col-sm-1 col-sm-push-1">
+      <span class="grow-cost">{{loanAmount*growRateSlider.value/100 | currency : '$' : 0}}</span>
+    </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1 text-sm-right">
       You save:
     </div>
     <div class="col-xs-6 col-sm-1 col-sm-push-1">
       <span class="saved">{{loanAmount*(externalRateSlider.value-growRateSlider.value)/100 | positive | currency : '$' : 0}}</span>
     </div>
-  </div>
 
-</div>
+  </div>
